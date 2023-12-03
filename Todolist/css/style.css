@@ -90,7 +90,18 @@ a:hover{
 /*Elementos gerais*/
 .lista_atividade{
     padding: 23px;
+    min-height: 550px;
+    max-height: 550px;
+    min-width: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
+
+.lista_atividade::-webkit-scrollbar{
+    display: none;
+}
+
+
 .atividade_em_dia_container{
     padding: 23px;
     background-color: #C589E8;
@@ -155,7 +166,9 @@ span{
         display: flex;
         flex-direction: column;
         align-items: center;
-
+    }
+    .urgente{
+        margin-bottom: -250px;
     }
     .line{
         transform: rotate(90deg);
