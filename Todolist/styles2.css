@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:wght@100;300&display=swap');
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -38,6 +39,11 @@ textarea {
     resize: vertical; /* Permitir redimensionamento vertical */
 }
 
+label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
 #btn_submit,#btn_cancel {
     color: #fff;
     font-weight: bold;
@@ -64,6 +70,7 @@ textarea {
 }
 #btn_submit{
     background-color: #C589E8;
+    text-decoration: none;
 }
 #btn_submit:hover {
     background-color: #ac79ca;
@@ -87,6 +94,6 @@ textarea {
 
 @media (max-width: 350px) {
     .container{
-        width: 80%;
+        width: 70%;
     }
 }

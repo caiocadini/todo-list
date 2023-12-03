@@ -36,9 +36,10 @@ header {
     padding-top: 30px;
 }
 /*Navigation hyperlinks*/
-a{
+header a{
     margin: 30px;
     color: #E3DAFF;
+    text-decoration: none;
 }
 a:hover{
     color:#C589E8;

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Editar Atividade</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Edição de Tarefa</h2>
+        <form id="taskForm" action="index.html">
+            <label for="taskName">Nome da Tarefa:</label>
+            <input type="text" id="taskName" name="taskName" value = "Título" required/>
+
+            <label for="taskDescription">Descrição:</label>
+            <textarea id="taskDescription" name="taskDescription" required>Descrição</textarea>
+
+            <label for="taskDueDate">Data de Vencimento:</label>
+            <input type="date" id="taskDueDate" name="taskDueDate" required>
+            
+            <h2>Categoria:</h2>
+            <label>
+                <input type="radio" id="urgente" name="taskCategory" value="Urgente" checked>
+                Urgente
+            </label>
+            <label>
+                <input type="radio" id="bomfazer" name="taskCategory" value="BomFazer">
+                Bom Fazer
+            </label>
+            
+            <button id="btn_submit" type="submit">Inscrever Tarefa</button>
+        </form>
+            <a href="index.html"><button id="btn_cancel">Cancelar</button></a>
+    </div>
+</body>
+</html>
