@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Tarefa CRUD</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Inscrição de Tarefa</h2>
+        <form id="taskForm">
+            <label for="taskName">Nome da Tarefa:</label>
+            <input type="text" id="taskName" name="taskName" required>
+
+            <label for="taskDescription">Descrição:</label>
+            <textarea id="taskDescription" name="taskDescription" required></textarea>
+
+            <label for="taskDueDate">Data de Vencimento:</label>
+            <input type="date" id="taskDueDate" name="taskDueDate" required>
+
+            <button id="btn_submit" type="submit">Inscrever Tarefa</button>
+        </form>
+            <button id="btn_cancel"><a href="index.html">cancelar</a></button>
+    </div>
+</body>
+</html>
