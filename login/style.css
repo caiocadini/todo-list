@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: #5a5766;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+input,
+textarea {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#taskDescription {
+    height: 150px; /* Defina a altura desejada aqui */
+    resize: vertical; /* Permitir redimensionamento vertical */
+}
+
+.login-container{
+    width: 52vh;
+    height: 52vh;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.titulo{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container p{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.formulario{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    background-color: #c589e8;
+    width: 60%;
+    height: 50%;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ac79ca;
+}
+button:active {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5) inset;
+    background-color: #ac79ca;
+}
+
+@media(max-width: 450px){
+    .login-container{
+        width: 33vh;
+        height: 33vh;
+    }
+
+    .login-container p{
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
