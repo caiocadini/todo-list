@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:wght@100;300&display=swap');
+
 body {
     font-family: 'Josefin Sans', sans-serif;
     margin: 0;
@@ -6,18 +7,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh; 
     background-color: #5A5766;
 }
 
 .container {
     padding: 20px;
-    width: 50%;
-    min-width: 150px;
+    width: 80%; 
+    max-width: 400px; 
     border-radius: 8px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -34,21 +36,23 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 #taskDescription {
-    height: 150px; /* Defina a altura desejada aqui */
-    resize: vertical; /* Permitir redimensionamento vertical */
+    height: 150px;
+    resize: vertical;
 }
 
 label {
     display: inline-block;
     vertical-align: middle;
-  }
+}
 
-#btn_submit,#btn_cancel {
+#btn_submit,
+#btn_cancel {
     color: #fff;
     font-weight: bold;
     text-shadow: 1px 1px 2px #333;
-    letter-spacing: 1px; 
+    letter-spacing: 1px;
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -56,44 +60,51 @@ label {
     box-shadow: -4px -4px 10px rgba(0, 0, 0, 0.5) inset;
     transition: all .3s;
 }
-#btn_cancel{
+
+#btn_cancel {
     background-color: #F10000;
     width: 100%;
     margin-top: 10px;
 }
+
 #btn_cancel:hover {
     background-color: #e00202;
 }
+
 #btn_cancel:active {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5) inset;
     background-color: #e00202;
 }
-#btn_submit{
+
+#btn_submit {
     background-color: #C589E8;
     text-decoration: none;
 }
+
 #btn_submit:hover {
     background-color: #ac79ca;
 }
+
 #btn_submit:active {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5) inset;
     background-color: #ac79ca;
 }
-#btn_cancel a{
-    letter-spacing: 1px; 
+
+#btn_cancel a {
+    letter-spacing: 1px;
     text-decoration: none;
-    color:#fff;
+    color: #fff;
     font-weight: bold;
 }
 
 @media (max-width: 540px) {
-    .container{
-        width: 70%;
+    .container {
+        width: 90%;
     }
 }
 
 @media (max-width: 350px) {
-    .container{
-        width: 70%;
+    .container {
+        width: 95%; 
     }
 }

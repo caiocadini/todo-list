@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:wght@100;300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ephesis', cursive;
+}
+
+.background_image {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(background_image2.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    align-items: center;
+}
+
+.introduction_text {
+    text-align: center;
+    color: #fff; 
+    margin-right: 400px; /* Add margin to the right of the introduction text */
+}
+h1{
+    font-size: 90px;
+}
+h2{
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #ECFFF8;
+}
+.buttons {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+p{
+    margin: 50px;
+    font-size: 50px;
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.login_button,
+.signup_button {
+    padding: 10px 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    margin-left: 20px; 
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.signup_button:hover{
+    background-color: #E3DAFF;
+    cursor: pointer;
+}
+.login_button:hover{
+    background-color: #E3DAFF;
+    cursor: pointer;
+}
+
+@media(max-width: 1500px){
+    main{
+        flex-direction: column;
+    }
+    .introduction_text{
+        margin: auto;
+    }
+    .login_button,
+    .signup_button {
+        margin:auto;
+    }
+}
+@media(max-width: 600px){
+    h1{
+        font-size: 70px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    p{
+        font-size: 30px;
+    }
+    .login_button,
+    .signup_button {
+        width: 160px;
+        height: 60px;
+    }
+}

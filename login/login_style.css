@@ -1,36 +1,41 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:wght@100;300&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     height: 100%;
     width: 100%;
 }
 
-body{
+body {
     background-color: #5a5766;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 input,
 textarea {
     padding: 8px;
-    margin-bottom: 16px;
+    margin-bottom: auto;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 #taskDescription {
-    height: 150px; /* Defina a altura desejada aqui */
-    resize: vertical; /* Permitir redimensionamento vertical */
+    height: 150px;
+    /* Defina a altura desejada aqui */
+    resize: vertical;
+    /* Permitir redimensionamento vertical */
 }
 
-.login-container{
+.login-container {
     width: 52vh;
     height: 52vh;
     background-color: white;
@@ -39,22 +44,23 @@ textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
- 
+    min-height: 653px;
+    min-width: 400px;
 }
 
-.titulo{
-    height: 25%;
+.titulo {
+    margin-bottom: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login-container p{
+.login-container p {
     font-size: 22px;
     font-weight: bold;
 }
 
-.formulario{
+.formulario {
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -62,7 +68,7 @@ textarea {
     align-items: center;
 }
 
-.botao{
+.botao {
     width: 100%;
     height: 25%;
     display: flex;
@@ -70,31 +76,63 @@ textarea {
     align-items: center;
 }
 
-.button{
+.button {
     background-color: #c589e8;
     width: 60%;
     height: 50%;
     border: none;
     font-size: 16px;
     font-weight: bold;
+    color: #ffff;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 button:hover {
     background-color: #ac79ca;
+    cursor: pointer;
 }
+
 button:active {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5) inset;
     background-color: #ac79ca;
 }
 
-@media(max-width: 450px){
-    .login-container{
-        width: 33vh;
-        height: 33vh;
+.passwordContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+    margin-bottom: auto;
+}
+
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 80%;
+        height: auto;
+        min-height: unset;
     }
 
-    .login-container p{
+    .titulo {
+        margin-bottom: 15px;
+    }
+
+    .login-container p {
         font-size: 18px;
-        font-weight: bold;
+    }
+}
+
+@media (max-width: 450px) {
+    .login-container {
+        width: 90%;
+        height: auto;
+        min-height: unset;
+    }
+
+    .titulo {
+        margin-bottom: 10px;
+    }
+
+    .login-container p {
+        font-size: 16px;
     }
 }
