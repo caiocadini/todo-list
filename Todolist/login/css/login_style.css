@@ -20,53 +20,38 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-input,
-textarea {
+input {
     padding: 8px;
-    margin-bottom: auto;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-#taskDescription {
-    height: 150px;
-    /* Defina a altura desejada aqui */
-    resize: vertical;
-    /* Permitir redimensionamento vertical */
-}
 
-.login-container {
-    width: 52vh;
-    height: 52vh;
+.login_container {
     background-color: white;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 653px;
-    min-width: 400px;
+    width: 500px;
+    height: 700px;
 }
 
-.titulo {
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-container p {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.formulario {
+.login_container form{
     height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+
+.login_container #titulo{
+    margin: 50px 0;
+}
+
 
 .botao {
     width: 100%;
@@ -78,8 +63,8 @@ textarea {
 
 .button {
     background-color: #c589e8;
-    width: 60%;
-    height: 50%;
+    width: 200px;
+    height: 50px;
     border: none;
     font-size: 16px;
     font-weight: bold;
@@ -100,39 +85,42 @@ button:active {
 .passwordContainer{
     display: flex;
     flex-direction: column;
-    margin-top: -20px;
     margin-bottom: auto;
+    margin: 10px;
 }
 
-
-@media (max-width: 768px) {
-    .login-container {
-        width: 80%;
-        height: auto;
-        min-height: unset;
+@media screen and (max-width: 400px) {
+    .login_container #titulo{
+        font-size: 6vw;
+        margin: 4vw 0;
     }
 
-    .titulo {
-        margin-bottom: 15px;
+    form, .button{
+        font-size: 5vw;
+    }
+    .button{
+        width: 50vw;
+        height: 15vw;
     }
 
-    .login-container p {
-        font-size: 18px;
+    #user, #password{
+        padding: 3vw;
+        margin-bottom: 5vw;
+        width: 60vw;
+        height: 3vw;
+    }
+
+    .passwordContainer{
+        margin: 6vw;
+    }
+
+}
+
+@media screen and (max-width: 560px) {
+    .login_container {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
     }
 }
 
-@media (max-width: 450px) {
-    .login-container {
-        width: 90%;
-        height: auto;
-        min-height: unset;
-    }
-
-    .titulo {
-        margin-bottom: 10px;
-    }
-
-    .login-container p {
-        font-size: 16px;
-    }
-}

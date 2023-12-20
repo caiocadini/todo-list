@@ -7,7 +7,7 @@ unchecked.forEach((uncheck)=> {
 });
 
 function CheckNRemove(uncheck){
-    uncheck.style.backgroundImage = "url('css/check.png')";
+    uncheck.style.backgroundImage = "url('../todolist/assets/check.png')";
     setTimeout( () => uncheck.parentNode.remove(),200)
    
 }

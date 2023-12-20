@@ -11,5 +11,5 @@ function passwordToggle(){
 const button = document.querySelector(".button")
 
 button.addEventListener("click", ()=>{
-    window.location.href = "../Todolist/todolist.html"
+    window.location.href = "../todolist/todolist.html"
 })

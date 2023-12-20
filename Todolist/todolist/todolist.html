@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>TO-DO LIST</title>
+    <link href="./css/todolist_style.css" rel="stylesheet" type="text/css" />
+    <style>@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:wght@100;300&display=swap');</style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+          <span class="user_welcome">Olá, Usuário</span>
+          <a id="exit_account" href="../index.html">Sair</a>
+          <h1 id="titulo_header">TO-DO LIST</h1>
+          <a id="add_activity" href="inscricao.html">Adicionar Atividade</a>
+      </header>
+      <main>
+        <!--container com as listas de tarefas-->
+        <div class = "listas">
+          <!-- tarefas urgentes-->
+          <div class = "lista" id = "#listaUrgente"> 
+            <h2 class="titulo_lista">URGENTE</h2>
+            <div class = "atividades">
+              <div class = "atividade_em_dia_container" draggable="true">
+                <div class = "activity_text">
+                  <h3>Título</h3>
+                  <span>Descrição</span>
+                  <br/>
+                  <span>MM/DD/AAA</span>
+                </div>
+                <div class = "unchecked"></div> 
+              </div> <!--Fim do container reutilizável para checkbox-->
+            </div> <!--Fim do classe reutilizável lista de atividade-->
+          </div> 
+          <div class = "line"></div>
+          <!-- tarefas menos importantes-->
+          <div class = "lista" id = "listaBomFazer">
+            <h2 class="titulo_lista">BOM FAZER</h2>
+            <div class="atividades">
+              <div class = "atividade_atrasada_container" draggable="true">
+                <div class = "activity_text">
+                  <h3>Título</h3>
+                  <span>Descrição</span>
+                  <br/>
+                  <span> MM/DD/AAA</span>
+                </div>
+                <div class = "unchecked"></div>
+              </div> <!--Fim do container reutilizável para checkbox-->
+              <div class = "atividade_em_dia_container" draggable="true">
+                <div class = "activity_text">
+                  <h3>Título</h3>
+                  <span>Descrição</span>
+                  <br/>
+                  <span> MM/DD/AAA</span>
+                </div>
+                <div class = "unchecked"></div>
+              </div> <!--Fim do container reutilizável para checkbox-->
+              <div class = "atividade_em_dia_container" draggable="true">
+                <div class = "activity_text">
+                  <h3>Título</h3>
+                  <span>Descrição</span>
+                  <br/>
+                  <span> MM/DD/AAA</span>
+                </div>
+                <div class = "unchecked"></div>
+              </div> <!--Fim do container reutilizável para checkbox-->
+              <div class = "atividade_em_dia_container" draggable="true">
+                <div class = "activity_text">
+                  <h3>Título</h3>
+                  <span>Descrição</span>
+                  <br/>
+                  <span> MM/DD/AAA</span>
+                </div>
+                <div class = "unchecked"></div>
+              </div> <!--Fim do container reutilizável para checkbox-->
+              <div class = "atividade_em_dia_container" draggable="true">
+                <div class = "activity_text">
+                  <h3>Título</h3>
+                  <span>Descrição</span>
+                  <br/>
+                  <span> MM/DD/AAA</span>
+                </div>
+                <div class = "unchecked"></div>
+              </div> <!--Fim do container reutilizável para checkbox-->
+              <div class = "atividade_em_dia_container" draggable="true">
+                <div class = "activity_text">
+                  <h3>Título</h3>
+                  <span>Descrição</span>
+                  <br/>
+                  <span> MM/DD/AAA</span>
+                </div>
+                <div class = "unchecked"></div>
+              </div> <!--Fim do container reutilizável para checkbox-->         </div> <!--Fim do classe reutilizável lista de atividade-->
+          </div> 
+        </div> 
+        
+      </main> 
+    </div>
+    <script src = "js/dragNdrop.js"></script>
+    <script src = "js/changeImage.js"></script>
+    <script src = "js/submitting.js"></script>
+  </body>
+</html>

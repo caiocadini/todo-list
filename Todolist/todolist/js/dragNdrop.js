@@ -1,7 +1,7 @@
 /* Drag and Drop Functionalities*/
 const todos = document.querySelectorAll(".atividade_em_dia_container");
 const vencidos = document.querySelectorAll(".atividade_atrasada_container");
-const listas = document.querySelectorAll(".lista_atividade");
+const listas = document.querySelectorAll(".atividades");
 let draggableTodo = null;
 
 todos.forEach((atividade_em_dia_container) =>{
