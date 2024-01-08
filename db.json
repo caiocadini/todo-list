@@ -1,0 +1,61 @@
+{
+  "todos": [
+    {
+      "user": 1,
+      "password": "senha 1",
+      "todo": [],
+      "id": "1ced"
+    },
+    {
+      "user": 2,
+      "password": "senha 2",
+      "todo": [],
+      "id": "1dd6"
+    },
+    {
+      "user": 3,
+      "password": "senha 3",
+      "todo": [],
+      "id": "35a2"
+    },
+    {
+      "id": "183e",
+      "user": "gab",
+      "password": "teste",
+      "todo": []
+    },
+    {
+      "id": "test",
+      "password": "teste",
+      "todo": [
+        {
+          "id": "1704733748873",
+          "name": "teste",
+          "description": "ferfe",
+          "dueDate": "2024-01-13",
+          "category": "urgente"
+        },
+        {
+          "id": "1704733754316",
+          "name": "teste",
+          "description": "ferfe",
+          "dueDate": "2024-01-13",
+          "category": "urgente"
+        },
+        {
+          "id": "teste",
+          "description": "mudado",
+          "dueDate": "2024-01-05",
+          "category": "bomfazer"
+        }
+      ],
+      "task": {
+        "id": "1704733636013",
+        "name": "primo",
+        "description": "teste´porpoepre",
+        "dueDate": "2024-01-04",
+        "category": "bomfazer"
+      }
+    }
+  ]
+}

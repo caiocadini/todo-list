@@ -1,0 +1,102 @@
+.background_image {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/background_image2.png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+}
+
+.introduction_text {
+    text-align: center;
+    color: #fff; 
+    margin-right: 10vw; 
+}
+.h1{
+    font-size: 90px;
+}
+.h2{
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #ECFFF8;
+}
+.buttons {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.p{
+    margin: 50px;
+    font-size: 50px;
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.login_button,
+.signup_button {
+    padding: 45px 2vw;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    margin-left: 20px; 
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup_button:hover{
+    background-color: #E3DAFF;
+    cursor: pointer;
+}
+.login_button:hover{
+    background-color: #E3DAFF;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1500px){
+    .main{
+        flex-direction: column;
+    }
+    .introduction_text{
+        margin: auto;
+    }
+    .login_button,
+    .signup_button {
+        margin:auto;
+    }
+}
+@media screen and (max-width: 600px){
+    .h1{
+        font-size: 12vw;
+    }
+    .h2{
+        font-size: 5vw;
+    }
+    .p{
+        font-size: 5vw;
+        margin:3vw;
+    }
+    .introduction_text{
+        margin: 7vw;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .login_button, .signup_button{
+        font-size: 4vw;
+        width: 40vw;
+        height: 15vw;
+        padding: 8vw 2vw;
+    }
+}
