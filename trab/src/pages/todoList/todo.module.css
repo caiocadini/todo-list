@@ -1,0 +1,202 @@
+.container {
+    background-color: #5A5766;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/*Page header (topbar)*/
+.header {
+    margin: 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 75px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+/*Titulo da topbar*/
+#titulo_header {
+    color: #e3daff;
+    text-align: center;
+    font-size: 40px;
+    margin: auto;
+}
+.header .user_welcome{
+    font-size: 15px;
+    color: #ffff;
+}
+/*Navigation hyperlinks*/
+.header #exit_account, #add_activity{
+    color: #E3DAFF;
+    text-decoration: none;
+}
+.header #exit_account{
+    margin: 20px;
+}
+.header a:hover{
+    color:#C589E8;
+    cursor: pointer;
+}
+
+/* div com as 2 listas de tarefa (urgente+bom fazer)*/
+.container .listas {
+    display: flex;
+    margin-top: 80px; 
+}
+
+/*título URGENTE e BOM FAZER*/
+.titulo_lista{
+    color: #e3daff;
+    font-size: 32px;
+}
+
+/*div para a lista de urgente*/
+.listas .lista {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*Linha de divisão*/
+.listas .line{
+    border-left: 3px solid #ECFFF8;
+    border-radius: 3px;
+}
+
+.listas .lista .atividades{
+    padding: 23px;
+    height: 550px;
+    width: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.listas .lista .atividades::-webkit-scrollbar{
+    width: 10px;
+}
+
+.listas .lista .atividades::-webkit-scrollbar-thumb{
+    background: #C589E8;
+}
+
+
+.atividade_em_dia_container, .atividade_atrasada_container{
+    padding: 5%;
+    margin: 3%;
+    width: 90%;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.atividade_em_dia_container{
+    background-color: #C589E8;
+}
+.atividade_atrasada_container{
+    background-color: #F10000;
+}
+
+.activity_text{
+    width: 80%;
+}
+
+.unchecked{
+    width: 51px; 
+    height: 50px; 
+    background-image: url('/unchecked.png'); 
+    background-size: cover; 
+}
+
+
+.atividades h3{
+    font-size: 27px;
+    color: #ffff;
+}
+.atividades span{
+    font-size: 15px;
+    color: #ffff;
+}
+
+@media only screen and (max-width: 970px) {
+    .header{
+        width: 90%;
+    }
+    #titulo_header {
+        font-size: 20px;
+        padding-top: 5px;
+        align-self: center;
+    }
+    .listas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-height: 100vh;
+    }
+    .lista{
+        height: 40vh;
+    }
+
+    .line{
+        transform: rotate(90deg);
+        height: 300px;
+    }
+    .titulo_lista{
+        font-size: 18px;
+    }
+
+   
+
+}
+
+@media only screen and (max-width: 484px) {
+    .header .user_welcome{
+        font-size: 3vw;
+    }
+
+    .header #exit_account, #add_activity{
+        font-size: 4vw;
+    }
+
+    .header #titulo_header{
+        font-size: 5vw;
+    }
+
+    .atividades{
+        padding: 2vw;
+        width: 56vw;
+    }
+
+    .unchecked{
+        width: 13vw; 
+        height: 13vw; 
+    
+    }
+
+    .listas .lista .atividades{
+        width: 100vw;
+    }
+
+    .activity_text h3{
+        font-size: 6vw;
+    }
+    .activity_text span{
+        font-size: 4vw;
+    }
+
+    .titulo_lista{
+        font-size: 8vw;
+    }
+
+}
+
+@media only screen and (max-width: 300px) {
+    .header .user_welcome{
+        font-size: 0vw;
+    }
+}

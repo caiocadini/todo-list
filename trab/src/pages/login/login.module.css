@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:wght@100;300&display=swap');
+
+.body    {
+    background-color: #5a5766;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* login.module.css */
+/* General styles for input and textarea */
+.input-field {
+    padding: 8px;
+    margin-bottom: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Specific styles for taskDescription */
+#taskDescription {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Styles for the main login container */
+.login_container {
+    width: 52vh;
+    height: 52vh;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 653px;
+    min-width: 400px;
+}
+
+/* Styles for the title section */
+.titulo {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles for paragraph inside login container */
+.login-container p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* Styles for the form section */
+.formulario {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles for the button section */
+.botao {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles for the button element */
+.button {
+    background-color: #c589e8;
+    width: 60%;
+    height: 50%;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffff;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Hover state for the button */
+.button:hover {
+    background-color: #ac79ca;
+    cursor: pointer;
+}
+
+/* Active state for the button */
+.button:active {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5) inset;
+    background-color: #ac79ca;
+}
+
+/* Styles for the password container */
+.passwordContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+    margin-bottom: auto;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .login-container {
+        width: 80%;
+        height: auto;
+        min-height: unset;
+    }
+
+    .titulo {
+        margin-bottom: 15px;
+    }
+
+    .login-container p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    .login-container {
+        width: 90%;
+        height: auto;
+        min-height: unset;
+    }
+
+    .titulo {
+        margin-bottom: 10px;
+    }
+
+    .login-container p {
+        font-size: 16px;
+    }
+}

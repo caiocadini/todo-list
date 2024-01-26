@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": "teste@gmail.com",
+      "password": "$2b$10$OT6x6Kb8VzugVbymSVn6ZeDd92Dpg.8sNIL5NF.wtS2e2b3ZRWu5a",
+      "todo": []
+    },
+    {
+      "id": "teste2@gmail.com",
+      "password": "$2b$10$JuLIzWioHXW6I2eUCcOssOJYq1xHpJrS1GD5fOdG2awANUOz7xvO6",
+      "todo": []
+    },
+    {
+      "id": "teste3@gmail.com",
+      "password": "$2b$10$bmBvLqTIxUuM1m4ILDoyXeuVpqUscT1XgB5YmVFnJhCsg.nD8frjG",
+      "todo": []
+    },
+    {
+      "id": "teste5@gmail.com",
+      "password": "$2b$10$SLfIwSFZKYGKuT0K2aQinOiEqCvzMzfHULSDMHqgfS7RrqgVl8cmy",
+      "todo": []
+    },
+    {
+      "id": "teste6@gmail.com",
+      "password": "$2b$10$S9XcJMpBpzAwHdBkV6EEq.zInRNEUFxrY/6klR54IyRUyWkKdZ976",
+      "todo": []
+    }
+  ]
+}
