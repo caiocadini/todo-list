@@ -1,0 +1,124 @@
+.body{
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    background-color: #5A5766;
+}
+.container {
+    padding: 20px;
+    width: 80%; 
+    max-width: 400px; 
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    margin-bottom: 8px;
+}
+
+.input,
+.textarea {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#taskDescription {
+    height: 150px;
+    resize: vertical;
+}
+
+.label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#btn_submit,
+#btn_cancel {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #333;
+    letter-spacing: 1px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: -4px -4px 10px rgba(0, 0, 0, 0.5) inset;
+    transition: all .3s;
+}
+
+#btn_cancel {
+    background-color: #F10000;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#btn_cancel:hover {
+    background-color: #e00202;
+}
+
+#btn_cancel:active {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5) inset;
+    background-color: #e00202;
+}
+
+#btn_submit {
+    background-color: #C589E8;
+    text-decoration: none;
+}
+
+#btn_submit:hover {
+    background-color: #ac79ca;
+}
+
+#btn_submit:active {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5) inset;
+    background-color: #ac79ca;
+}
+
+#btn_cancel a {
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+@media screen and (max-height: 660px) {
+    .container #taskDescription{
+        height:75px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .container h2{
+        font-size: 8vw;
+    }
+
+    .container #taskForm, .form, #btn_submit, #btn_cancel{
+        font-size: 7vw;
+    }
+
+    .container{
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+    }
+}
+
