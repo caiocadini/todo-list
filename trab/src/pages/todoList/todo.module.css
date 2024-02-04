@@ -16,23 +16,25 @@
     margin-bottom: 10px;
 }
 /*Titulo da topbar*/
-#titulo_header {
+.titulo_header {
     color: #e3daff;
     text-align: center;
     font-size: 40px;
     margin: auto;
 }
-.header .user_welcome{
+.user_welcome{
     font-size: 15px;
     color: #ffff;
 }
 /*Navigation hyperlinks*/
-.header #exit_account, #add_activity{
+.add_activity{
     color: #E3DAFF;
     text-decoration: none;
 }
-.header #exit_account{
+.exit_account{
     margin: 20px;
+    color: #E3DAFF;
+    text-decoration: none;
 }
 .header a:hover{
     color:#C589E8;
@@ -40,7 +42,7 @@
 }
 
 /* div com as 2 listas de tarefa (urgente+bom fazer)*/
-.container .listas {
+.listas {
     display: flex;
     margin-top: 80px; 
 }
@@ -52,19 +54,19 @@
 }
 
 /*div para a lista de urgente*/
-.listas .lista {
+.lista {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 /*Linha de divisão*/
-.listas .line{
+.line{
     border-left: 3px solid #ECFFF8;
     border-radius: 3px;
 }
 
-.listas .lista .atividades{
+.atividades{
     padding: 23px;
     height: 550px;
     width: 500px;
@@ -75,11 +77,11 @@
     align-items: center;
 }
 
-.listas .lista .atividades::-webkit-scrollbar{
+.atividades::-webkit-scrollbar{
     width: 10px;
 }
 
-.listas .lista .atividades::-webkit-scrollbar-thumb{
+.atividades::-webkit-scrollbar-thumb{
     background: #C589E8;
 }
 
@@ -126,7 +128,7 @@
     .header{
         width: 90%;
     }
-    #titulo_header {
+    .titulo_header {
         font-size: 20px;
         padding-top: 5px;
         align-self: center;
@@ -155,15 +157,18 @@
 }
 
 @media only screen and (max-width: 484px) {
-    .header .user_welcome{
+    .user_welcome{
         font-size: 3vw;
     }
 
-    .header #exit_account, #add_activity{
+    .exit_account{
+        font-size: 4vw;
+    }
+    .add_activity{
         font-size: 4vw;
     }
 
-    .header #titulo_header{
+    .titulo_header{
         font-size: 5vw;
     }
 
@@ -196,7 +201,7 @@
 }
 
 @media only screen and (max-width: 300px) {
-    .header .user_welcome{
+    .user_welcome{
         font-size: 0vw;
     }
 }

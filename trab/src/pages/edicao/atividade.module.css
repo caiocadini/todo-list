@@ -34,7 +34,7 @@
     border-radius: 4px;
 }
 
-#taskDescription {
+.taskDescription {
     height: 150px;
     resize: vertical;
 }
