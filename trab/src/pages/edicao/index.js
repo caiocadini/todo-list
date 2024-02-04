@@ -1,6 +1,7 @@
 // pages/index.js
 import React, { useState, useEffect } from 'react';
 import styles from '../edicao/atividade.module.css';
+import Link from 'next/link';
 
 export default function Home() {
   const [taskName, setTaskName] = useState('');
@@ -129,9 +130,7 @@ export default function Home() {
             Inscrever Tarefa
           </button>
         </form>
-        <a href="todolist.html">
-          <button id={styles.btn_cancel}>Cancelar</button>
-        </a>
+          <Link id={styles.btn_cancel} href = "/todoList">Cancelar</Link> 
       </div>
     </div>
   );
