@@ -43,23 +43,27 @@ const TodoList = () => {
       const isOverdue = dueDate < currentDate;
 
       return (
-        <div
-          key={task.id}
-          className={`${isOverdue ? styles.atividade_atrasada_container: styles.atividade_em_dia_container}`}
-          draggable
-          onDragStart={dragStart}
-          onDragEnd={dragEnd}
-          onClick={checkNRedirect}>
-          <div className={styles.activity_text}>
-            <h3>{task.id}</h3>
-            <span>{task.description}</span>
-            <br />
-            <span>{task.dueDate}</span>
-          </div>
-          <div className={styles.unchecked} onClick={(e) => { e.stopPropagation(); checkNRemove(task.id); }}></div>
+        
+          <div
+            key={task.id}
+            className={`${isOverdue ? styles.atividade_atrasada_container: styles.atividade_em_dia_container}`}
+            draggable
+            onDragStart={dragStart}
+            onDragEnd={dragEnd}
+            onClick={checkNRedirect}>
+            <div className={styles.activity_text}>
+            <Link href={`/edicao?taskId=${task.id}`} key={task.id} style={{textDecoration:'none'}}>
+              <h3>{task.id}</h3>
+            </Link>
+              <span>{task.description}</span>
+              <br />
+              <span>{task.dueDate}</span>
+            </div>
+            <div className={styles.unchecked} onClick={(e) => { e.stopPropagation(); checkNRemove(task.id); }}></div>
 
-          {/* Add more details as needed */}
-        </div>
+            {/* Add more details as needed */}
+          </div>
+       
       );
     });
   };
@@ -88,7 +92,7 @@ const TodoList = () => {
   };
 
   const checkNRedirect = () => {
-    window.location.href = '/edicao'; // Ajuste conforme necessário
+    <Link href='/edicao'></Link> // Ajuste conforme necessário
   };
 
   const dragStart = (e) => {

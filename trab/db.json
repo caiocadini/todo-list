@@ -30,9 +30,9 @@
       "password": "$2b$10$TXJAoqTFf5ZMaug/7L8Zaeh833amKlDQaxE4/wcERVnWpDin55jgO",
       "todo": [
         {
-          "id": "tea",
-          "description": "tea",
-          "dueDate": "2024-01-30",
+          "id": "teste",
+          "description": "Teste",
+          "dueDate": "2024-02-02",
           "category": "urgente"
         }
       ]
@@ -42,10 +42,10 @@
       "password": "$2b$10$lX6dHfrOWpagY6s1vf/Bd.THj4SaU7KNOWz3lJCX3mRNUVulvYeSK",
       "todo": [
         {
-          "id": "caioteste",
-          "description": "caioba",
-          "dueDate": "2024-02-08",
-          "category": "urgente"
+          "id": "Minha",
+          "description": "ponto",
+          "dueDate": "2024-01-31",
+          "category": "bomfazer"
         }
       ]
     }

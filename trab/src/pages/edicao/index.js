@@ -1,21 +1,34 @@
 // pages/index.js
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../edicao/atividade.module.css';
 import Link from 'next/link';
+const jwt = require ('jsonwebtoken');
 
 export default function Home() {
+  const router = useRouter();
+  const taskId = router.query.taskId;
   const [taskName, setTaskName] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
   const [taskDueDate, setTaskDueDate] = useState('');
   const [taskCategory, setTaskCategory] = useState('urgente');
   const [userTasks, setUserTasks] = useState([]);
+  const storedToken = localStorage.getItem('token');
+  const decodedToken = jwt.verify(storedToken, 'sua-chave-secreta');
+  const userID = decodedToken.id;
 
   const getUserTasks = async () => {
-    const userID = 'test';
     try {
       const response = await fetch(`http://localhost:3001/todos/${userID}`);
       if (response.ok) {
         const userData = await response.json();
+        const index = userData.todo.findIndex(task => task.id === taskId);
+        if (index !== -1){
+          setTaskName(userData.todo[index].id || '');
+          setTaskDescription(userData.todo[index].description || '');
+          setTaskDueDate(userData.todo[index].dueDate || '');
+          setTaskCategory(userData.todo[index].category || '');
+        }
         setUserTasks(userData.todo || []);
       } else {
         console.error('Erro ao obter tarefas do usuário.');
@@ -25,15 +38,14 @@ export default function Home() {
     }
   };
 
+
   useEffect(() => {
     getUserTasks();
   }, []);
 
   const handleTaskSubmission = async (event) => {
     event.preventDefault();
-
-    const userID = 'teste2@gmail.com';
-
+  
     try {
       const response = await fetch(`http://localhost:3001/todos/${userID}`, {
         method: 'PATCH',
@@ -42,16 +54,23 @@ export default function Home() {
         },
         body: JSON.stringify({
           todo: userTasks.map((task) =>
-            task.id === taskName
-              ? { ...task, description: taskDescription, dueDate: taskDueDate, category: taskCategory }
+            task.id === taskId
+              ? {
+                  ...task,
+                  id: taskName, 
+                  description: taskDescription,
+                  dueDate: taskDueDate,
+                  category: taskCategory,
+                }
               : task
           ),
         }),
       });
-
+  
       if (response.ok) {
         console.log('Tarefa atualizada com sucesso!');
         getUserTasks();
+        router.push('/todoList');
       } else {
         console.error('Erro ao atualizar tarefa.');
       }
@@ -59,6 +78,7 @@ export default function Home() {
       console.error('Erro ao conectar-se ao servidor:', error);
     }
   };
+  
 
   return (
     <div className={styles.body}>
@@ -125,12 +145,11 @@ export default function Home() {
             />
             Bom Fazer
           </label>
-
           <button id={styles.btn_submit} type="submit">
             Inscrever Tarefa
           </button>
         </form>
-          <Link id={styles.btn_cancel} href = "/todoList">Cancelar</Link> 
+          <Link id={styles.btn_cancel} href = "/todoList">Voltar</Link> 
       </div>
     </div>
   );

@@ -144,7 +144,7 @@
               Inscrever Tarefa
             </button>
           </form>
-            <Link id={styles.btn_cancel} href = "/todoList" >Cancelar</Link>
+            <Link id={styles.btn_cancel} href = "/todoList" >Voltar</Link>
         </div>
       </div>
     );
