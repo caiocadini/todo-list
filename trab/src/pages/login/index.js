@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import styles from './login.module.css';
 import { useRouter } from 'next/router';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -12,6 +13,12 @@ export default function Home() {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const router=useRouter()
+
+  const GlobalStyle = createGlobalStyle`
+  html {
+    height: 100%;
+    width: 100%;
+  }`;
 
   const passwordToggle = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -52,6 +59,8 @@ export default function Home() {
   };
 
   return (
+    <>
+    <GlobalStyle />
     <div className={styles.body}>
       <div className={styles.login_container}>
         <div className={styles.titulo}>
@@ -99,5 +108,6 @@ export default function Home() {
         )}
       </div>
     </div>
+    </>
   );
 }

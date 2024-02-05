@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Raleway:wght@100;300&display=swap');
+
 .container {
     background-color: #5A5766;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+;
 }
 /*Page header (topbar)*/
 .header {
@@ -45,6 +50,7 @@
 .listas {
     display: flex;
     margin-top: 80px; 
+    background-color: #5A5766;
 }
 
 /*título URGENTE e BOM FAZER*/
@@ -59,6 +65,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 /*Linha de divisão*/
 .line{
@@ -138,7 +145,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        max-height: 100vh;
+        height: 100vh;
     }
     .lista{
         height: 40vh;
