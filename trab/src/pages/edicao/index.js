@@ -13,71 +13,91 @@ export default function Home() {
   const [taskDueDate, setTaskDueDate] = useState('');
   const [taskCategory, setTaskCategory] = useState('urgente');
   const [userTasks, setUserTasks] = useState([]);
-  const storedToken = localStorage.getItem('token');
-  const decodedToken = jwt.verify(storedToken, 'sua-chave-secreta');
-  const userID = decodedToken.id;
+  const storedToken = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+  const decodedToken = storedToken ? jwt.verify(storedToken, 'sua-chave-secreta') : null;
+  const userID = decodedToken ? decodedToken.id : null;
+  const [isLoading, setIsLoading] = useState(true);
+  const [isChanged, setIsChanged] = useState(false);
+  
 
   const getUserTasks = async () => {
+    if(userID){
+    // Simula uma requisição ao servidor para obter as tarefas do usuário
     try {
       const response = await fetch(`http://localhost:3001/todos/${userID}`);
       if (response.ok) {
         const userData = await response.json();
-        const index = userData.todo.findIndex(task => task.id === taskId);
-        if (index !== -1){
-          setTaskName(userData.todo[index].id || '');
-          setTaskDescription(userData.todo[index].description || '');
-          setTaskDueDate(userData.todo[index].dueDate || '');
-          setTaskCategory(userData.todo[index].category || '');
-        }
         setUserTasks(userData.todo || []);
       } else {
         console.error('Erro ao obter tarefas do usuário.');
       }
     } catch (error) {
       console.error('Erro ao conectar-se ao servidor:', error);
+    }finally {
+      setIsLoading(false);
     }
-  };
+  }else {
+    setIsLoading(false);}};
 
 
-  useEffect(() => {
+  useEffect( () => {
+    
     getUserTasks();
-  }, []);
+    if(!isChanged){
+    if (taskId && userTasks.length > 0) {
+      const selectedTask = userTasks.find(task => task.id === taskId);
+      if (selectedTask) {
+        setTaskName(selectedTask.id || ''); // Replace 'name' with the actual property name
+        setTaskDescription(selectedTask.description || '');
+        setTaskDueDate(selectedTask.dueDate || '');
+        setTaskCategory(selectedTask.category || 'urgente');
+        setIsChanged(true);
+      }
+    }
+  }
+  }, [userID, taskId, userTasks]);
+
+  if (isLoading) {
+    return <div>Loading...</div>; // You can replace this with a loading component
+  }
 
   const handleTaskSubmission = async (event) => {
     event.preventDefault();
   
-    try {
-      const response = await fetch(`http://localhost:3001/todos/${userID}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          todo: userTasks.map((task) =>
-            task.id === taskId
-              ? {
-                  ...task,
-                  id: taskName, 
-                  description: taskDescription,
-                  dueDate: taskDueDate,
-                  category: taskCategory,
-                }
-              : task
-          ),
-        }),
-      });
-  
-      if (response.ok) {
-        console.log('Tarefa atualizada com sucesso!');
-        getUserTasks();
-        router.push('/todoList');
-      } else {
-        console.error('Erro ao atualizar tarefa.');
+    if(userID){
+      try {
+        const response = await fetch(`http://localhost:3001/todos/${userID}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            todo: userTasks.map((task) =>
+              task.id === taskId
+                ? {
+                    ...task,
+                    id: taskName, 
+                    description: taskDescription,
+                    dueDate: taskDueDate,
+                    category: taskCategory,
+                  }
+                : task
+            ),
+          }),
+        });
+    
+        if (response.ok) {
+          console.log('Tarefa atualizada com sucesso!');
+          getUserTasks();
+          router.push('/todoList');
+        } else {
+          console.error('Erro ao atualizar tarefa.');
+        }
+      } catch (error) {
+        console.error('Erro ao conectar-se ao servidor:', error);
       }
-    } catch (error) {
-      console.error('Erro ao conectar-se ao servidor:', error);
     }
-  };
+    };
   
 
   return (
