@@ -11,34 +11,40 @@
     const [taskDueDate, setTaskDueDate] = useState('');
     const [taskCategory, setTaskCategory] = useState('urgente');
     const [userTasks, setUserTasks] = useState([]);
+    const storedToken = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+  const decodedToken = storedToken ? jwt.verify(storedToken, 'sua-chave-secreta') : null;
+  const userID = decodedToken ? decodedToken.id : null;
+  const [isLoading, setIsLoading] = useState(true);
+  
 
-    const storedToken = localStorage.getItem('token');
-    const decodedToken = jwt.verify(storedToken, 'sua-chave-secreta');
-    const userID = decodedToken.id;
-
-
-    
-
-    const getUserTasks = async () => {
-      // Simula uma requisição ao servidor para obter as tarefas do usuário
-      try {
-        const response = await fetch(`http://localhost:3001/todos/${userID}`);
-        if (response.ok) {
-          const userData = await response.json();
-          setUserTasks(userData.todo || []);
-        } else {
-          console.error('Erro ao obter tarefas do usuário.');
-        }
-      } catch (error) {
-        console.error('Erro ao conectar-se ao servidor:', error);
+  const getUserTasks = async () => {
+    if(userID){
+    // Simula uma requisição ao servidor para obter as tarefas do usuário
+    try {
+      const response = await fetch(`http://localhost:3001/todos/${userID}`);
+      if (response.ok) {
+        const userData = await response.json();
+        setUserTasks(userData.todo || []);
+      } else {
+        console.error('Erro ao obter tarefas do usuário.');
       }
-    };
+    } catch (error) {
+      console.error('Erro ao conectar-se ao servidor:', error);
+    }finally {
+      setIsLoading(false);
+    }
+  }else {
+    setIsLoading(false);}};
 
 
+  useEffect(() => {
+    
+    getUserTasks();
+  }, [userID]);
 
-    useEffect(() => {
-      getUserTasks();
-    }, []); // Executa apenas uma vez no carregamento inicial
+  if (isLoading) {
+    return <div>Loading...</div>; // You can replace this with a loading component
+  }// Executa apenas uma vez no carregamento inicial
 
     const handleTaskSubmission = async (event) => {
       event.preventDefault();

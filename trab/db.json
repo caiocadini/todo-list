@@ -30,10 +30,10 @@
       "password": "$2b$10$TXJAoqTFf5ZMaug/7L8Zaeh833amKlDQaxE4/wcERVnWpDin55jgO",
       "todo": [
         {
-          "id": "teste",
-          "description": "Teste",
-          "dueDate": "2024-02-02",
-          "category": "urgente"
+          "id": "caioc",
+          "description": "sasa",
+          "dueDate": "2024-01-31",
+          "category": "bomfazer"
         }
       ]
     },
@@ -48,6 +48,11 @@
           "category": "bomfazer"
         }
       ]
+    },
+    {
+      "id": "caio3",
+      "password": "$2b$10$sC.k9SrpHkkSYMiOP..l1.LkX3KPpKscaQviv3I0UiG992o2PjMzK",
+      "todo": []
     }
   ]
 }

@@ -5,15 +5,17 @@ const jwt = require ('jsonwebtoken');
 
 const TodoList = () => {
   const [draggedTodo, setDraggedTodo] = useState(null);
-  const storedToken = localStorage.getItem('token');
-  const decodedToken = jwt.verify(storedToken, 'sua-chave-secreta');
-  const userId = decodedToken.id;
+  const storedToken = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+  const decodedToken = storedToken ? jwt.verify(storedToken, 'sua-chave-secreta') : null;
+  const userId = decodedToken ? decodedToken.id : null;
   const [userTasks, setUserTasks] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
 
     
 
     const getUserTasks = async () => {
+      if(userId){
       // Simula uma requisição ao servidor para obter as tarefas do usuário
       try {
         const response = await fetch(`http://localhost:3001/todos/${userId}`);
@@ -25,14 +27,21 @@ const TodoList = () => {
         }
       } catch (error) {
         console.error('Erro ao conectar-se ao servidor:', error);
+      }finally {
+        setIsLoading(false);
       }
-    };
+    }else {
+      setIsLoading(false);}};
 
 
 
     useEffect(() => {
       getUserTasks();
-    }, []); // Executa apenas uma vez no carregamento inicial
+    }, [userId]); // Executa apenas uma vez no carregamento inicial
+
+    if (isLoading) {
+      return <div>Loading...</div>; // You can replace this with a loading component
+    }
   
   //Rendering the tasks
   const renderTasks = (tasks) => {
