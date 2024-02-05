@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './todo.module.css'
+import { useRouter } from 'next/router'; 
+import useAuth from '../useAuth';
 const jwt = require ('jsonwebtoken');
 
 const TodoList = () => {
+  useAuth();
+  const router = useRouter();
   const [draggedTodo, setDraggedTodo] = useState(null);
   const storedToken = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
   const decodedToken = storedToken ? jwt.verify(storedToken, 'sua-chave-secreta') : null;
@@ -127,6 +131,11 @@ const TodoList = () => {
     console.log("dragleave");
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    router.push('/login'); 
+  };
+
   const dragDrop = async (e) => {
     e.preventDefault();
     const target = e.target;
@@ -159,7 +168,7 @@ const TodoList = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <span className={styles.user_welcome}>Olá, {userId}</span>
-        <Link className = {styles.exit_account} href="/">Sair</Link>
+        <span className={styles.exit_account} onClick={handleLogout}>Sair</span>
         <h1 className={styles.titulo_header}>TO-DO LIST</h1>
         <Link className = {styles.add_activity} href="/inscricao">Adicionar Atividade</Link>
       </header>

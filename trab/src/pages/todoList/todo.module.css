@@ -40,6 +40,7 @@
     margin: 20px;
     color: #E3DAFF;
     text-decoration: none;
+    cursor: pointer;
 }
 .header a:hover{
     color:#C589E8;

@@ -2,9 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/login": "pages/login.js",
+  "/inscricao": "pages/inscricao.js",
   "/todoList": "pages/todoList.js",
-  "/api/todolist": "pages/api/todolist.js",
-  "/edicao": "pages/edicao.js",
-  "/inscricao": "pages/inscricao.js"
+  "/login": "pages/login.js",
+  "/api/user": "pages/api/user.js"
 }

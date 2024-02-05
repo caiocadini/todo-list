@@ -53,6 +53,18 @@
       "id": "caio3",
       "password": "$2b$10$sC.k9SrpHkkSYMiOP..l1.LkX3KPpKscaQviv3I0UiG992o2PjMzK",
       "todo": []
+    },
+    {
+      "id": "lucas1",
+      "password": "$2b$10$vrqlcnA0P8agK69bzRxL9eMQONQX.T/aT7KmFzrqwan7NHljevwIy",
+      "todo": [
+        {
+          "id": "AAA",
+          "description": "aaaaaaaaa",
+          "dueDate": "2024-03-09",
+          "category": "urgente"
+        }
+      ]
     }
   ]
 }

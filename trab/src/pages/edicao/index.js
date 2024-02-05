@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import styles from '../edicao/atividade.module.css';
+import useAuth from '../useAuth';
 import Link from 'next/link';
 const jwt = require ('jsonwebtoken');
 
 export default function Home() {
+  useAuth();
   const router = useRouter();
   const taskId = router.query.taskId;
   const [taskName, setTaskName] = useState('');
