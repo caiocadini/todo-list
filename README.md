@@ -1,7 +1,7 @@
 Trabalho de WEB2, grupo:
 
-Caio Obatke Watari Gonçalves Cadini - 800383
+Caio Obatke Watari Gonçalves Cadini
 
-Gabriel Mansano Pires - 790951
+Gabriel Mansano Pires
 
-Lucas Abbiati Pereira - 801572
+Lucas Abbiati Pereira
